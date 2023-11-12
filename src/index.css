@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: Poppins_Bold;
+    src: url('./assets/fonts/Poppins-Bold.ttf') format("truetype");
 }
+@font-face {
+    font-family: Poppins_BoldItalic;
+    src: url('./assets/fonts/Poppins-BoldItalic.ttf') format("truetype");
+}
+@font-face {
+    font-family: Poppins_ExtraBold;
+    src: url('./assets/fonts/Poppins-ExtraBold.ttf') format("truetype");
+}
+@font-face {
+    font-family: Poppins_ExtraBoldItalic;
+    src: url('./assets/fonts/Poppins-ExtraBoldItalic.ttf') format("truetype");
+}
+@font-face {
+    font-family: Poppins_Italic;
+    src: url('./assets/fonts/Poppins-Italic.ttf') format("truetype");
+}
+@font-face {
+    font-family: Poppins_Regular;
+    src: url('./assets/fonts/Poppins-Regular.ttf') format("truetype");
+}
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
