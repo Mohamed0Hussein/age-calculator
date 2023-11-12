@@ -33,7 +33,7 @@ function App() {
         }
         if(parseInt(yearValue) > new Date().getFullYear()){
           setYear({...year,isError:true,errorLabel:'Must be in the past'})
-        } 
+        }
       }
       else if((parseInt(monthValue) === 4 || parseInt(monthValue) === 6 || parseInt(monthValue) === 9 || parseInt(monthValue) === 11 ) && parseInt(dayValue) === 31){
         setDay({...day,isError:true,errorLabel:'Must be a valid day'})
@@ -43,6 +43,12 @@ function App() {
       }
       else if (parseInt(monthValue) === 2 && parseInt(yearValue) % 4 === 0 && parseInt(dayValue) > 29){
         setDay({...day,isError:true,errorLabel:'Must be a valid day'})
+      }
+      else if(parseInt(yearValue) === new Date().getFullYear() && parseInt(monthValue) > (new Date().getMonth() + 1)){
+        setMonth({...month,isError:true,errorLabel:'Must be in the past'})
+      }
+      else if(parseInt(yearValue) === new Date().getFullYear() && parseInt(monthValue) === (new Date().getMonth() + 1) && parseInt(dayValue) > new Date().getDate()){
+        setDay({...day,isError:true,errorLabel:'Must be in the past'})
       }
       else{
         var realYear = (new Date().getFullYear()) - parseInt(yearValue)
